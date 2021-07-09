@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">NewsDesk</string>
+    <string name="title">Title</string>
+    <string name="name">Name</string>
+    <string name="top_headlines">Top Headlines</string>
+    <string name="home">Home</string>
+    <string name="technology">Tech</string>
+    <string name="business">Business</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="sports">Sports</string>
+    <string name="newsdesk">NewsDesk</string>
+    <string name="author">author</string>
+    <string name="description">Description</string>
+    <string name="date">date</string>
+</resources>

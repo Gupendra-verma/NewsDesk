@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bkg"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/toolbar_bkg"
+        android:elevation="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/newsdesk"
+            android:textColor="#263650"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/layout_bkg"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:id="@+id/option_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@id/progressBar_main"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:id="@+id/home_page"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/home_bkg"
+                            android:elevation="8dp"
+                            tools:ignore="UselessParent">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/house2" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_horizontal"
+                            android:text="@string/home"
+                            android:fontFamily="@font/roboto"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tech"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/tech_bkg"
+                            android:elevation="8dp"
+                            tools:ignore="UselessParent">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/virtual"
+
+                                />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_horizontal"
+                            android:text="@string/technology"
+                            android:fontFamily="@font/roboto"
+                            android:textAlignment="center"
+
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/business"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/business_bkg"
+                            android:elevation="8dp"
+                            tools:ignore="UselessParent">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/business"
+
+                                />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_horizontal"
+                            android:text="@string/business"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/roboto"
+
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/entertainment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/entertainment_bkg"
+                            android:elevation="8dp"
+                            tools:ignore="UselessParent">
+
+                            <ImageView
+                                android:id="@+id/tech_img"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/entertainment"
+
+                                />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_horizontal"
+                            android:text="@string/entertainment"
+                            android:fontFamily="@font/roboto"
+                            android:textAlignment="center"
+
+                            />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/sports"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/sports_bkg"
+                            android:elevation="8dp"
+                            tools:ignore="UselessParent">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/sports_trophy" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_horizontal"
+                            android:text="@string/sports"
+                            android:fontFamily="@font/roboto"
+                            android:textAlignment="center"
+
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <ProgressBar
+                    android:id="@+id/progressBar_main"
+                    style="@android:style/Widget.Material.ProgressBar.Small.Title"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/circle_bkg"
+                    android:elevation="8dp"
+                    android:padding="5dp"
+                    app:layout_constraintBottom_toTopOf="@id/headlines"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/option_bar" />
+
+
+                <TextView
+                    android:id="@+id/headlines"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/top_headlines"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#2D2E2D"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:typeface="sans"
+                    app:layout_constraintBottom_toTopOf="@+id/recycler_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/progressBar_main" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/headlines" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
