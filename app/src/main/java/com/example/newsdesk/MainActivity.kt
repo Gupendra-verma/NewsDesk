@@ -14,7 +14,7 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
 
-class MainActivity : AppCompatActivity(), NewsItemClicked {
+class MainActivity : AppCompatActivity(), NewsItemClicked, View.OnClickListener {
 
     private lateinit var mAdapter: NewsAdapter
     private lateinit var progressBar: ProgressBar
@@ -42,8 +42,8 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
 
     private fun fetchData(query: String) {
 
-        val queue = Volley.newRequestQueue(this)
-        val url = "https://news-webserver.herokuapp.com/$query"
+        Volley.newRequestQueue(this)
+        val url = "https://olds-server.cyclic.app/$query"
 
         val jsonArrayRequest = JsonArrayRequest(Request.Method.GET, url, null,
             {
@@ -86,34 +86,31 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
     private fun queryCalls() {
 
         val home = findViewById<LinearLayout>(R.id.home_page)
-        home.setOnClickListener(View.OnClickListener {
-            progressBar.visibility = View.VISIBLE
-            fetchData("")
-        })
-
         val tech = findViewById<LinearLayout>(R.id.tech)
-        tech.setOnClickListener(View.OnClickListener {
-            progressBar.visibility = View.VISIBLE
-            fetchData("tech")
-        })
-
         val buss = findViewById<LinearLayout>(R.id.business)
-        buss.setOnClickListener(View.OnClickListener {
-            progressBar.visibility = View.VISIBLE
-            fetchData("business")
-        })
-
         val sports = findViewById<LinearLayout>(R.id.sports)
-        sports.setOnClickListener(View.OnClickListener {
-            progressBar.visibility = View.VISIBLE
-            fetchData("sports")
-        })
-
         val entertainment = findViewById<LinearLayout>(R.id.entertainment)
-        entertainment.setOnClickListener(View.OnClickListener {
-            progressBar.visibility = View.VISIBLE
-            fetchData("ent")
-        })
+
+
+        home.setOnClickListener(this@MainActivity)
+        tech.setOnClickListener(this@MainActivity)
+        buss.setOnClickListener(this@MainActivity)
+        sports.setOnClickListener(this@MainActivity)
+        entertainment.setOnClickListener(this@MainActivity)
+
+
+    }
+
+    override fun onClick(v: View?) {
+        progressBar.visibility = View.VISIBLE
+
+        when(v!!.id){
+           R.id.home_page ->  fetchData("")
+           R.id.tech ->  fetchData("tech")
+           R.id.business->  fetchData("business")
+           R.id.sports ->  fetchData("sports")
+           R.id.entertainment ->  fetchData("ent")
+        }
     }
 
 }
